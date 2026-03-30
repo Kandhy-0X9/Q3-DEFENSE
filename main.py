@@ -26,10 +26,10 @@ for color in colors:
 # race
 winner = None
 while not winner:
-    for t in turtles:
-        t.forward(random.randint(1, 10))
-        if t.xcor() >= 200:
-            winner = t.pencolor()
+    for racer in turtles:
+        racer.forward(random.randint(1, 10))
+        if racer.xcor() >= 200:
+            winner = racer.pencolor()
             break
 # announce winner
 time.sleep(1)
