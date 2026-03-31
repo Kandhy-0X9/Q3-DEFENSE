@@ -14,3 +14,9 @@ Main flow:
     Run the race (each turtle moves randomly forward)
     Announce winner and calculate final balance
     Display result on screen
+
+Links:
+https://stackoverflow.com/questions/22134712/python-move-two-turtle-objects-at-once
+https://www.w3schools.com/python/ref_keyword_none.asp
+https://www.geeksforgeeks.org/python/turtle-race-game-using-python-turtle-graphics-library/
+https://www.khanacademy.org/computing/intro-to-python-fundamentals/x5279a44ae0ab15d6:building-software-with-classes/x5279a44ae0ab15d6:attributes/v/classes-and-objects
