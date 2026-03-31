@@ -12,7 +12,7 @@ title("Turtle Race")
 bgcolor('forestgreen')
 
 turtleColors = ['red', 'blue', 'yellow', 'black', 'purple']
-balance = 1000
+balance = 100
 turtles = []
 os.system('cls')  # Clear console for better readability
 
