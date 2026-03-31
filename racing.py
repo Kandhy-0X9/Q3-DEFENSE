@@ -22,7 +22,7 @@ def print_turtles(): # print turtles in order with numbers
 
 # introduction
 print("=== TURTLE RACE ===")
-print(f"Your starting balance: ${balance}")
+print(f"Your starting balance: {balance} shells")
 print("Available turtles:")
 print_turtles()
 # Get bet color
@@ -36,7 +36,7 @@ while True:
 # Get bet amount
 while True:
     try:
-        betAmount = int(textinput("Bet Amount", "How much do you want to bet? $"))
+        betAmount = int(textinput("Bet Amount", "How much do you want to bet? shells"))
         if 0 < betAmount <= balance:
             break
         else:
@@ -46,7 +46,7 @@ while True:
 print()
 
 balance -= betAmount
-print(f"You bet ${betAmount} on the {betColor} turtle. Good luck!")
+print(f"You bet {betAmount} shells on the {betColor} turtle. Good luck!")
 print("Starting race...\n")
 
 # Lane object
@@ -85,7 +85,7 @@ betDisplay.hideturtle()
 betDisplay.penup()
 betDisplay.color('white')
 betDisplay.goto(0, 200)
-betDisplay.write(f"Your bet: ${betAmount} on {betColor} | Balance: ${balance}", align="center", font=("Arial", 16, "normal"))
+betDisplay.write(f"Your bet: {betAmount} shells on {betColor} | Balance: {balance} shells", align="center", font=("Arial", 16, "normal"))
 
 # instantiate turtles
 for paint in turtleColors:
@@ -109,12 +109,12 @@ print(f"The winner is the {winner} turtle!")
 if betColor == winner:
     winnings = betAmount * 4
     balance += winnings
-    resultMessage = f"\nCongratulations! You won ${winnings}.\nYour new balance is ${balance}."
+    resultMessage = f"\nCongratulations! You won {winnings} shells.\nYour new balance is {balance} shells."
     print(resultMessage)
 
 # result message
 else:
-    resultMessage = f"\nSorry, you lost your bet.\nYour new balance is ${balance}."
+    resultMessage = f"\nSorry, you lost your bet.\nYour new balance is {balance} shells."
     print(resultMessage)
 
 # Display result on screen
