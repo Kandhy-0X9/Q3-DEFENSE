@@ -109,12 +109,12 @@ print(f"The winner is the {winner} turtle!")
 if betColor == winner:
     winnings = betAmount * 4
     balance += winnings
-    resultMessage = f"\nCongratulations! You won ${winnings}. Your new balance is ${balance}."
+    resultMessage = f"\nCongratulations! You won ${winnings}.\nYour new balance is ${balance}."
     print(resultMessage)
 
 # result message
 else:
-    resultMessage = f"\nSorry, you lost your bet. Your new balance is ${balance}."
+    resultMessage = f"\nSorry, you lost your bet.\nYour new balance is ${balance}."
     print(resultMessage)
 
 # Display result on screen
