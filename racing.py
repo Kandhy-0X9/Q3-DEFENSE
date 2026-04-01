@@ -3,6 +3,7 @@ from turtle import *
 import time
 import random
 import os
+import sys
 
 # Set up window
 hideturtle()
@@ -116,6 +117,10 @@ if betColor == winner:
 else:
     resultMessage = f"\nSorry, you lost your bet.\nYour new balance is {balance} shells."
     print(resultMessage)
+    if balance == 0:
+        time.sleep(2.5)
+        os.system('cls')
+        sys.exit()
 
 # Display result on screen
 resultDisplay = Turtle()
