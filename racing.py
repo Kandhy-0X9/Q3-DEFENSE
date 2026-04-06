@@ -18,13 +18,13 @@ def print_turtles():
         print(f"{i}. {color}")
 
 def reset_track():
-    # Clear all turtles and drawings from the screen, keeping the window open.
+    """Clear all turtles and drawings from the screen, keeping the window open."""
     clearscreen()
     bgcolor('forestgreen')
     title("Turtle Race")
 
 def draw_track():
-    # Draw the lanes and finish line.
+    """Draw the lanes and finish line."""
     num_lanes = 5
     laneHeight = 40
     startY = -80
@@ -56,7 +56,7 @@ def draw_track():
     return startY, laneHeight
 
 def run_race(betColor, betAmount, balance):
-    # Set up and run a single race. Returns the winner color.
+    """Set up and run a single race. Returns the winner color."""
     startY, laneHeight = draw_track()
 
     # Display betting info
@@ -88,30 +88,16 @@ def run_race(betColor, betAmount, balance):
                 winner = racer.pencolor()
                 break
 
-# announce winner
-print(f"The winner is the {winner} turtle!")
-if betColor == winner:
-    winnings = betAmount * 4
-    balance += winnings
-    resultMessage = f"\nCongratulations! You won {winnings} shells.\nYour new balance is {balance} shells."
-    print(resultMessage)
+    return winner
 
-# result message
-else:
-    resultMessage = f"\nSorry, you lost your bet.\nYour new balance is {balance} shells."
-    print(resultMessage)
-    if balance == 0:
-        time.sleep(2.5)
-        os.system('cls')
-        sys.exit()
-
-# Display result on screen
-resultDisplay = Turtle()
-resultDisplay.hideturtle()
-resultDisplay.penup()
-resultDisplay.color('white')
-resultDisplay.goto(0, -200)
-resultDisplay.write(resultMessage, align="center", font=("Arial", 16, "normal"))
+def show_result(resultMessage):
+    """Display the result message on screen."""
+    resultDisplay = Turtle()
+    resultDisplay.hideturtle()
+    resultDisplay.penup()
+    resultDisplay.color('white')
+    resultDisplay.goto(0, -200)
+    resultDisplay.write(resultMessage, align="center", font=("Arial", 16, "normal"))
 
 # ── Main game loop ──────────────────────────────────────────────────────────────
 print("=== TURTLE RACE ===")
@@ -128,7 +114,7 @@ while balance > 0:
 
     # Get bet color
     while True:
-        betColor = textinput("Support Turtle", "Which turtle do you want to support?").strip().lower()
+        betColor = textinput("Place Bet", "Which turtle do you want to bet on?").strip().lower()
         if betColor in turtleColors:
             break
         print("Turtle not available. Please choose from the list.")
@@ -137,12 +123,12 @@ while balance > 0:
     # Get bet amount
     while True:
         try:
-            betAmount = int(textinput("Shell Amount", f"How much do you want to shell? (max {balance} shells)"))
+            betAmount = int(textinput("Bet Amount", f"How much do you want to bet? (max {balance} shells)"))
             if 0 < betAmount <= balance:
                 break
             else:
                 print(f"Please enter an amount between 1 and {balance} shells.")
-        except:
+        except (ValueError, TypeError):
             print("Invalid input. Please enter a whole number.")
 
     balance -= betAmount
