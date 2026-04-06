@@ -88,16 +88,30 @@ def run_race(betColor, betAmount, balance):
                 winner = racer.pencolor()
                 break
 
-    return winner
+# announce winner
+print(f"The winner is the {winner} turtle!")
+if betColor == winner:
+    winnings = betAmount * 4
+    balance += winnings
+    resultMessage = f"\nCongratulations! You won {winnings} shells.\nYour new balance is {balance} shells."
+    print(resultMessage)
 
-def show_result(resultMessage):
-    # Display the result message on screen.
-    resultDisplay = Turtle()
-    resultDisplay.hideturtle()
-    resultDisplay.penup()
-    resultDisplay.color('white')
-    resultDisplay.goto(0, -200)
-    resultDisplay.write(resultMessage, align="center", font=("Arial", 16, "normal"))
+# result message
+else:
+    resultMessage = f"\nSorry, you lost your bet.\nYour new balance is {balance} shells."
+    print(resultMessage)
+    if balance == 0:
+        time.sleep(2.5)
+        os.system('cls')
+        sys.exit()
+
+# Display result on screen
+resultDisplay = Turtle()
+resultDisplay.hideturtle()
+resultDisplay.penup()
+resultDisplay.color('white')
+resultDisplay.goto(0, -200)
+resultDisplay.write(resultMessage, align="center", font=("Arial", 16, "normal"))
 
 # ── Main game loop ──────────────────────────────────────────────────────────────
 print("=== TURTLE RACE ===")
