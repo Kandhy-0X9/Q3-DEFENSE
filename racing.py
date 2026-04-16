@@ -16,8 +16,11 @@ turtles = []
 os.system('cls')
 
 def print_turtles(color):
-    for i, color in enumerate(turtleColors, start=1):
-        print(f"{i}. {color}")
+    if not turtleColors:
+        print("No turtles")
+    else:
+        for i, color in enumerate(turtleColors, start=1):
+            print(f"{i}. {color}")
 
 print("=== TURTLE RACE ===")
 print(f"Your starting balance: {balance} shells")
