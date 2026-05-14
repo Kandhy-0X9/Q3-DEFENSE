@@ -4,6 +4,18 @@ import random
 import os
 import sys
 
+# class Racers:
+#     def __init__(self, name, color, species, weight, height, age):
+#         self.name = name
+#         self.color = color
+#         self.species = species
+#         self.weight = weight
+#         self.height = height
+#         self.age = age
+#     def __str__(self):
+#         return f"{self.name} is a {self.color} {self.species} weighing {self.weight} kg, standing {self.height} cm tall, and is {self.age} years old."
+
+
 hideturtle()
 screen = Screen()
 screen.setup(width=500, height=500)
