@@ -29,12 +29,18 @@ class Racers:
         print(f"\n {self.bio}\n")
         print(f"{equal40}")
 
-# Mocked bios for standalone functionality (Replace with your file open code if needed)
-tracyBio = "Fast sea turtle."
-ralphBio = "Steady land turtle."
-jennyBio = "Small box turtle."
-dougBio = "Heavy leatherback."
-pamBio = "Agile green sea turtle."
+# Bio s
+tracyFile = open("tracy.txt")
+ralphFile = open("ralph.txt")
+jennyFile = open("jenny.txt")
+dougFile = open("doug.txt")
+pamFile = open("pam.txt")
+
+tracyBio = print(tracyFile.read())
+ralphBio = print(ralphFile.read())
+jennyBio = print(jennyFile.read())
+dougBio = print(dougFile.read())
+pamBio = print(pamFile.read())
 
 # Create turtle racer instances
 Tracy = Racers("Tracy", "black", 124, "Sea Turtle", 150, 120, 50, tracyBio)
